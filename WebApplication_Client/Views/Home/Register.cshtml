@@ -1,0 +1,71 @@
+﻿@model ClientModelCon
+
+<h2>Registrar cliente</h2>
+
+@{ 
+    var id = string.Empty;
+    var nome = string.Empty;
+    var sobrenome = string.Empty;
+    var cpf = string.Empty;
+    var data_nascimento = string.Empty;
+
+
+
+    try
+    {
+        id = ViewBag.Register.Id.ToString();
+        nome = ViewBag.Register.Nome.ToString();
+        sobrenome = ViewBag.Register.Sobrenome.ToString();
+        cpf = ViewBag.Register.Cpf.ToString();
+        data_nascimento = ViewBag.Register.Data_Nascimento.ToString();
+    }
+    catch
+    {
+
+        
+    }
+}
+
+<form asp-controller="Home" asp-action="Register">
+    <input asp-for="Id" class="form-control" value="@id" type="hidden"/>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <label>Nome</label>
+            <input asp-for="Nome" class="form-control" value="@nome" />
+        </div>
+
+        <div class="col-lg-3">
+            <label>Sobrenome</label>
+            <input asp-for="Sobrenome" class="form-control" value="@sobrenome"/>
+        </div>
+
+        <div class="col-lg-3">
+            <label>Cpf</label>
+            <input asp-for="Cpf" class="form-control" value="@cpf" />
+        </div>
+
+        <div class="col-lg-3">
+            <label>Data de nascimento</label>
+            <input asp-for="Data_Nascimento" class="form-control" value="@data_nascimento" />
+        </div>
+
+        @*<select name="profissao">
+            <option value="Programador"></option>
+            <option value="Analista"></option>
+            <option value="Gerente"></option>
+            <option value="Estagiário"></option>
+            <option value="QA"></option>
+        </select>*@
+
+    </div>
+
+    <br />
+    <br />
+
+    <button type="submit" class="btn btn-block btn-success" onclick="register()">Registrar cliente</button>
+
+</form>
+
+
+

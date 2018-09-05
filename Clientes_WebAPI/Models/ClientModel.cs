@@ -22,8 +22,10 @@ namespace Clientes_WebAPI.Models
             DAL objDAL = new DAL();
 
             string sql = "insert into clientes(nome, sobrenome, cpf, data_nascimento, idade, profissao_id)" +
-            $"values('{Nome}','{Sobrenome}','{Cpf}','{DateTime.Parse(Data_Nascimento).ToString("yyyy/MM/dd")}'," +
-               $"'{Idade}','{Profissao_Id}')";
+            $"values('{Nome}','{Sobrenome}','{Cpf}','{DateTime.Parse(Data_Nascimento).ToString("yyyy/MM/dd")}'";
+            //" +
+            ////$"'," +
+            ////   $"'{Idade}','{Profissao_Id}')";
 
             objDAL.ExecuteCommandSQL(sql);
         }
@@ -53,7 +55,7 @@ namespace Clientes_WebAPI.Models
         }
 
         public List<ClientModel> Listing()
-        {
+       {
             List<ClientModel> list = new List<ClientModel>();
             ClientModel item;
 

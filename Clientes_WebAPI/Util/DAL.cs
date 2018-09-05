@@ -17,7 +17,8 @@ namespace Clientes_WebAPI.Util
         private SqlConnection connection;
 
 
-        private string connectionString = $"Server={Server};Database={Database};Uid={User};Pwd={Password}";
+        private string connectionString = $"Server={Server};Database={Database};User Id={User};Password={Password}";
+
 
         public DAL()
         {

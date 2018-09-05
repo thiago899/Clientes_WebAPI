@@ -29,6 +29,7 @@ namespace Clientes_WebAPI
             services.AddMvc();
             services.AddSession();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
         }
 
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +46,7 @@ namespace Clientes_WebAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
         }
     }
 }
